@@ -1,21 +1,31 @@
 {
-  "extends": "nx/presets/npm.json",
-  "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "resax",
-  "affected": {
-    "defaultBase": "main"
-  },
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx/tasks-runners/default",
-      "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
-      }
+    "extends": "nx/presets/npm.json",
+    "$schema": "./node_modules/nx/schemas/nx-schema.json",
+    "npmScope": "resax",
+    "affected": {
+        "defaultBase": "main"
+    },
+    "workspaceLayout": {
+        "appsDir": "apps",
+        "libsDir": "packages"
+    },
+    "tasksRunnerOptions": {
+        "default": {
+            "runner": "@nrwl/nx-cloud",
+            "options": {
+                "cacheableOperations": [
+                    "build",
+                    "lint",
+                    "test",
+                    "e2e",
+                    "stylelint"
+                ],
+                "accessToken": "ZWVkMjUwZmUtNDRjZi00YjMwLWIwMjQtZmQyYTVhMTA5NGM0fHJlYWQtd3JpdGU="
+            }
+        }
+    },
+    "implicitDependencies": {
+        "package.json": "*",
+        ".stylelintrc.json": "*"
     }
-  }
 }
