@@ -15,7 +15,8 @@
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
         "paths": {
-            "@resax/core/*": ["packages/core/src/*"]
+            "@resax/core/*": ["packages/core/src/*"],
+            "@resax/react": ["packages/react/src/index.ts"]
         }
     },
     "exclude": ["node_modules", "tmp"]

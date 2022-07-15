@@ -27,5 +27,19 @@
     "implicitDependencies": {
         "package.json": "*",
         ".stylelintrc.json": "*"
-    }
+    },
+    "generators": {
+        "@nrwl/react": {
+            "application": {
+                "babel": true
+            }
+        },
+        "@nrwl/next": {
+            "application": {
+                "style": "scss",
+                "linter": "eslint"
+            }
+        }
+    },
+    "defaultProject": "docs"
 }

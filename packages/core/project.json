@@ -16,7 +16,7 @@
         "build-styles": {
             "executor": "@nrwl/workspace:run-commands",
             "options": {
-                "command": "pnpm ts-node packages/core/bundle-styles.ts"
+                "command": "node packages/core/build-styles"
             }
         },
         "build": {
@@ -24,7 +24,8 @@
             "options": {
                 "commands": [
                     "pnpm nx run core:build-base",
-                    "pnpm nx run core:build-styles"
+                    "pnpm nx run core:build-styles",
+                    "console.log('Successfully built scripts and styles.')"
                 ],
                 "parallel": false
             }
